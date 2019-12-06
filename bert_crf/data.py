@@ -63,7 +63,8 @@ def create_parameter(
   }
 
 class DataSet:
-  def __init__(self, data_file, tag_list, max_seq_len):
+  def __init__(self, data_file, tag_list, max_seq_len, vob_file):
+    self.vob_file = vob_file
     self._tag_list = tag_list
     samples = read_pydict_file(data_file)
     self.max_seq_len = max_seq_len
@@ -74,7 +75,7 @@ class DataSet:
   def _gen_label(self, sample):
     word_list = sample["word_list"]
     original_text = sample["text"]
-    T = BertTokenizer(vocab_file="/Users/jingwenhuang/Documents/NLP/bert/chinese_L-12_H-768_A-12/vocab.txt")
+    T = BertTokenizer(vocab_file=self.vob_file)
     tokens, input_ids, input_mask, segment_ids = T.parse_single_sentence(
       text_a=original_text, max_seq_length=self.max_seq_len
     )

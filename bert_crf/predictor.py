@@ -43,7 +43,8 @@ class Predictor(object):
   def predict_dataset(self, file_name):
     data = DataSet(data_file=file_name,
                    tag_list=self.param["tag_list"],
-                   max_seq_len=self.param["max_seq_length"])
+                   max_seq_len=self.param["max_seq_length"],
+                   vob_file=self.param["vob_file"])
     data_iter = data.create_batch_iter(batch_size=self.param["batch_size"],
                                        epoch_num=1,
                                        shuffle=False)

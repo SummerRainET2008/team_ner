@@ -30,7 +30,8 @@ class Trainer(object):
         # tag_list: guarantee to be pre-sorted, "O" is the first one
         train_data = DataSet(data_file=param["train_file"],
                              tag_list=param["tag_list"],
-                             max_seq_len=param["max_seq_length"]
+                             max_seq_len=param["max_seq_length"],
+                             vob_file=param["vob_file"],
                              )
         batch_iter = train_data.create_batch_iter(batch_size=param["batch_size"],
                                                   epoch_num=param["epoch_num"],
@@ -41,7 +42,8 @@ class Trainer(object):
         else:
             vali_data = DataSet(data_file=param["vali_file"],
                                 tag_list=param["tag_list"],
-                                max_seq_len=param["max_seq_length"]
+                                max_seq_len=param["max_seq_length"],
+                                vob_file=param["vob_file"]
                                 )
 
         self._best_vali_accuracy = None
