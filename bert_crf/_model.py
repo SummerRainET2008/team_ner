@@ -33,9 +33,9 @@ class _Model(object):
                                   [tag_size, tag_size], tf.float32)
     self.trans_probs = self._norm(trans_probs, 1, "trans_probs")
 
-    self.bert_model = BertModel(bert_config_file="/Users/jingwenhuang/Documents/NLP/bert/chinese_L-12_H-768_A-12/bert_config.json",
+    self.bert_model = BertModel(bert_config_file=bert_config_file,
                                 max_seq_length=max_seq_len,
-                                bert_init_ckpt="/Users/jingwenhuang/Documents/NLP/bert/chinese_L-12_H-768_A-12/bert_model.ckpt",
+                                bert_init_ckpt=bert_init_ckpt,
                                 is_training=is_training)
 
     bert_states = self.bert_model.get_layer_output()[-1]
