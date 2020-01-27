@@ -1,4 +1,7 @@
+#todo: summer: add this file to project folder, such as bi_lstm_crf_torch.
+
 import sys
+#todo: summer: do not code like this. Use $PYTHONPATH.
 sys.path.append('../my-tool-box/insight_nlp/')
 from pa_nlp.nlp import Logger
 import numpy as np
@@ -50,6 +53,7 @@ if __name__ == '__main__':
   test_1 = torch.tensor([[1,2,3], [4,5,6]])
   test_2 = torch.tensor([[1,2,2], [4,5,6]])
   print(cal_accuracy(test_1, test_2))
+  #todo: summer: follow our team coding style.
   tag_list = ['ORG', 'TIME', 'FAC', 'LANGUAGE', 'GPE', 'WORK_OF_ART', 'CARDINAL', 'QUANTITY', 'DATE', 'PRODUCT', 'NORP',
               'LOC', 'LAW', 'ORDINAL', 'PERSON', 'EVENT', 'O', 'PERCENT', 'MONEY']
   tag_list = ["O"] + sorted(set(tag_list) - set("O"))

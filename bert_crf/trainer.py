@@ -14,6 +14,7 @@ from bert_crf.data import *
 from pa_nlp import chinese
 
 
+#todo: summer: follow our team coding style.
 class Trainer(object):
     def train(self, param):
         self.param = param
