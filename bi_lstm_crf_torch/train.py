@@ -11,7 +11,7 @@ from pa_nlp.pytorch.estimator.train import TrainerBase
 from seqeval.metrics import precision_score, recall_score, f1_score, classification_report
 
 class Trainer(TrainerBase):
-  def __init__(self, gpu_id: int):
+  def __init__(self):
     param = Param()
     param.verify()
     self.param = param
@@ -89,21 +89,15 @@ class Trainer(TrainerBase):
 
 def main():
   parser = optparse.OptionParser(usage="cmd [optons] ..]")
-  # parser.add_option("-q", "--quiet", action="store_true", dest="verbose",
-  parser.add_option("--gpu", type=int, default=-1, help="default=-1")
   parser.add_option("--debug_level", type=int, default=1)
   (options, args) = parser.parse_args()
   param = Param()
 
-  # nlp.display_server_info()
-  print(f"GPU: {options.gpu}")
-
-  # os.environ["CUDA_VISIBLE_DEVICES"] = options.gpu
   Logger.set_level(options.debug_level)
 
-  trainer = Trainer(options.gpu)
+  trainer = Trainer()
   trainer.train()
-  new_trainer = Trainer(options.gpu)
+  new_trainer = Trainer()
   test_text = "My name is Jingwen Huang."
   tokenizer = Tokenizer.get_instance()
   word_ids = tokenizer.tokenize(sentence=test_text, max_len=param.max_seq_len)

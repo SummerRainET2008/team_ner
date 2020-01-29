@@ -1,6 +1,3 @@
-#coding: utf8
-#author: Tian Xia (SummerRainET2008@gmail.com)
-
 from pa_nlp.tf_1x.nlp_tf import *
 from bert_crf.data import *
 from bert_crf.trainer import Trainer

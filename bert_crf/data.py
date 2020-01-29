@@ -1,6 +1,3 @@
-#coding: utf8
-#author: Tian Xia (SummerRainET2008@gmail.com)
-
 import os
 from pa_nlp.common import *
 from pa_nlp.tf_1x.bert.bert_tokenizer import *

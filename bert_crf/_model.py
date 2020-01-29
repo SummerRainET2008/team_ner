@@ -1,6 +1,3 @@
-#coding: utf8
-#author: Tian Xia (SummerRainET2008@gmail.com)
-
 from pa_nlp.tf_1x import nlp_tf as TF
 import tensorflow as tf
 from pa_nlp.common import *

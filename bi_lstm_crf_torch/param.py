@@ -1,8 +1,9 @@
-import sys
-sys.path.append('../my-tool-box/insight_nlp/')
 import os
 from pa_nlp.pytorch import *
 from pa_nlp.pytorch.estimator.param import ParamBase
+
+TAG_LIST = ['ORG', 'TIME', 'FAC', 'LANGUAGE', 'GPE', 'WORK_OF_ART', 'CARDINAL', 'QUANTITY', 'DATE', 'PRODUCT', 'NORP',
+            'LOC', 'LAW', 'ORDINAL', 'PERSON', 'EVENT', 'O', 'PERCENT', 'MONEY']
 
 class Param(ParamBase):
   def __init__(self):
@@ -21,7 +22,7 @@ class Param(ParamBase):
     ]
 
     self.pretrained_model = os.path.expanduser(
-      "/Users/jingwenhuang/Documents/NLP/roberta/roberta.base/",
+      "../../roberta/roberta.base/",
     )
 
     self.optimizer_name = "Adam"
@@ -32,8 +33,8 @@ class Param(ParamBase):
     self.iter_num_update_optimizer = 1
     self.max_seq_len = 32
     self.eval_gap_instance_num = 5
-    tag_list = ['ORG', 'TIME', 'FAC', 'LANGUAGE', 'GPE', 'WORK_OF_ART', 'CARDINAL', 'QUANTITY', 'DATE', 'PRODUCT', 'NORP', 'LOC', 'LAW', 'ORDINAL', 'PERSON', 'EVENT', 'O', 'PERCENT', 'MONEY']
-    self.tag_list = ["O"] + sorted(set(tag_list) - set("O"))
+
+    self.tag_list = ["O"] + sorted(set(TAG_LIST) - set("O"))
     self.embedding_size = 128
     self.RNN_type = "lstm"
     self.GPU = -1
@@ -46,7 +47,6 @@ class Param(ParamBase):
     self.model_kept_num = 30
     self.train_sample_num = 3
 
-    self.update()
 
 
 if __name__ == '__main__':
