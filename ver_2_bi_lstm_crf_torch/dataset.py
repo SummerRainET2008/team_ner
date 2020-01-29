@@ -1,5 +1,5 @@
-from bi_lstm_crf_torch import *
-from bi_lstm_crf_torch.param import Param
+from ver_2_bi_lstm_crf_torch import *
+from ver_2_bi_lstm_crf_torch.param import Param
 import torch.utils.data
 
 class _Dataset(torch.utils.data.Dataset):

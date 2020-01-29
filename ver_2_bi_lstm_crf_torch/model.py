@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 from torchcrf import CRF
-from bi_lstm_crf_torch import *
+from ver_2_bi_lstm_crf_torch import *
 from pa_nlp.pytorch import nlp_torch
 
 class BiLSTM_CRF(nn.Module):

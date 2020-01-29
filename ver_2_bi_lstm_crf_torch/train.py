@@ -1,11 +1,11 @@
 import torch
 import time
 import optparse
-from bi_lstm_crf_torch import *
-from bi_lstm_crf_torch.param import Param
-from bi_lstm_crf_torch.model import BiLSTM_CRF
-from bi_lstm_crf_torch.dataset import get_batch_data
-from bi_lstm_crf_torch.make_features import Tokenizer
+from ver_2_bi_lstm_crf_torch import *
+from ver_2_bi_lstm_crf_torch.param import Param
+from ver_2_bi_lstm_crf_torch.model import BiLSTM_CRF
+from ver_2_bi_lstm_crf_torch.dataset import get_batch_data
+from ver_2_bi_lstm_crf_torch.make_features import Tokenizer
 from pa_nlp.nlp import Logger
 from pa_nlp.pytorch.estimator.train import TrainerBase
 from seqeval.metrics import precision_score, recall_score, f1_score, classification_report

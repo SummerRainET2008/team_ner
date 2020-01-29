@@ -7,7 +7,7 @@ TAG_LIST = ['ORG', 'TIME', 'FAC', 'LANGUAGE', 'GPE', 'WORK_OF_ART', 'CARDINAL', 
 
 class Param(ParamBase):
   def __init__(self):
-    super(Param, self).__init__("bi_lstm_crf_torch")
+    super(Param, self).__init__("ver_2_bi_lstm_crf_torch")
 
     self.train_files = [
       f"{self.path_feat}/train.pydict"

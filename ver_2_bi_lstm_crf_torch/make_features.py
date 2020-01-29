@@ -1,6 +1,6 @@
-from bi_lstm_crf_torch import *
+from ver_2_bi_lstm_crf_torch import *
 import pickle, os
-from bi_lstm_crf_torch.param import Param
+from ver_2_bi_lstm_crf_torch.param import Param
 from pytorch_transformers import RobertaTokenizer
 
 class Tokenizer:

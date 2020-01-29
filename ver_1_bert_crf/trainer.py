@@ -1,6 +1,6 @@
 from pa_nlp.tf_1x.nlp_tf import *
-from bert_crf._model import _Model
-from bert_crf.data import *
+from ver_1_bert_crf._model import _Model
+from ver_1_bert_crf.data import *
 from pa_nlp import chinese
 
 class Trainer(object):

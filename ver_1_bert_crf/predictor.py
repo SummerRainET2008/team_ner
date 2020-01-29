@@ -1,8 +1,8 @@
 from pa_nlp.tf_1x.nlp_tf import *
-from bert_crf.data import *
-from bert_crf.trainer import Trainer
+from ver_1_bert_crf.data import *
+from ver_1_bert_crf.trainer import Trainer
 from pa_nlp.tf_1x.bert.bert_tokenizer import *
-from bert_crf._model import _Model
+from ver_1_bert_crf._model import _Model
 
 class Predictor(object):
   def __init__(self, model_path):
